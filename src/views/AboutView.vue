@@ -3,7 +3,7 @@
     <a-card hoverable class="card">
       <template #cover>
         <div class="gradient-background">
-          <img src="/favicon.ico" style="width: 200px; margin: 0 auto" />
+          <img src="/logo.png" style="width: 200px; margin: 0 auto" />
         </div>
       </template>
       <a-card-meta>
