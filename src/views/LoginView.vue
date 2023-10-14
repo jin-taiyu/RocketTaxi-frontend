@@ -81,7 +81,7 @@ const onLogin = () => {
           <img alt="" src="/logo.svg" style="width: 50%" />
         </a-row>
         <a-space direction="vertical" fill size="medium">
-          <h1 style="text-align: center">KZOJ</h1>
+          <h1 style="text-align: center">Rocket Taxi</h1>
           <!-- 手机号 -->
           <a-input
             v-model="phone.value"

@@ -45,7 +45,7 @@ const onLogout = () => {
         <a-menu :selected-keys="selectedKey" mode="horizontal" @menuItemClick="onMenuItemClick">
           <!-- Logo -->
           <a-menu-item key="/">
-            <a-image :preview="false" height="32px" src="/logo.svg" />
+            <a-image :preview="false" height="32px" src="/favicon.ico" />
           </a-menu-item>
           <!-- 菜单项 -->
           <a-menu-item v-for="route in showRoutes" :key="route.path">
