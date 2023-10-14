@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { loginByCode, sendVerificationCode } from '@/api/user'
 import { useUserStore } from '@/stores/user'
 import { reactive, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'

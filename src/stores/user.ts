@@ -1,5 +1,3 @@
-import { queryMyAccount } from '@/api/user'
-import type { User } from '@/models/user'
 import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('userStore', {
