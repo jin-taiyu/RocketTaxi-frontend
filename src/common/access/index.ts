@@ -30,5 +30,5 @@ router.beforeEach(async (to) => {
     })
     return { path: '/' }
   }
-  document.title = ('KZOJ - ' + to.meta.title) as string
+  document.title = ('Rocket Taxi - ' + to.meta.title) as string
 })
