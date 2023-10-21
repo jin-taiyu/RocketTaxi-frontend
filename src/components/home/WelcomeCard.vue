@@ -16,7 +16,7 @@ const images = ref(['/pic/rt_pic01.jpg', '/pic/rt_pic02.jpg'])
       </a-carousel-item>
     </a-carousel>
 
-    <h1 style="color: rgb(44, 166, 247)">欢迎来到Rocket Taxi &nbsp; : )</h1>
+    <h1 style="color: rgb(44, 166, 247)">欢迎来到Rocket Taxi</h1>
   </div>
 </template>
 
