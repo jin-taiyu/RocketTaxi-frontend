@@ -10,36 +10,14 @@ const userStore = useUserStore()
 /**
  * 登录表单项
  */
-const phone = reactive({
+const username = reactive({
   value: '',
   valid: false
 })
-const code = reactive({
+const password = reactive({
   value: '',
-  valid: false,
-  cooling: false,
-  coolingTime: 60
+  valid: false
 })
-
-/**
- * 验证码
- */
-const onSendCode = () => {
-  sendVerificationCode(phone.value).then(() => {
-    setCodeCooling()
-  })
-}
-const setCodeCooling = () => {
-  code.cooling = true
-  let timer = setInterval(() => {
-    code.coolingTime--
-    if (code.coolingTime === 0) {
-      code.coolingTime = 60
-      code.cooling = false
-      clearInterval(timer)
-    }
-  }, 1000)
-}
 
 /**
  * 登录
@@ -48,7 +26,7 @@ const loginLoading = ref(false)
 const onLogin = () => {
   loginLoading.value = true
 
-  loginByCode(phone.value, code.value)
+  loginByUsernamePassword(username.value, password.value)
     .then((resp) => {
       console.log(resp.data)
 
@@ -59,14 +37,6 @@ const onLogin = () => {
       const redirectPath = route.query.redirect as string
       console.log(redirectPath)
       router.push({ path: redirectPath ?? '/home', replace: true })
-      /*
-      let { user, token } = resp.data.data
-      userStore.setUserInfo(user)
-      localStorage.setItem('token', token)
-
-      const redirectPath = route.query.redirect as string
-      router.push({ path: redirectPath ?? '/', replace: true })
-      */
     })
     .finally(() => (loginLoading.value = false))
 }
@@ -80,47 +50,34 @@ const onLogin = () => {
         <a-row justify="center">
           <img alt="" src="/logo.svg" style="width: 50%" />
         </a-row>
-        <a-space direction="vertical" fill size="medium">
-          <h1 style="text-align: center">Rocket Taxi</h1>
-          <!-- 手机号 -->
+        <a-space direction="vertical" fill size="medium" style="display: flex; justify-content: center; align-items: center;">
+          <img src="/logo.png" style="width: 200px; margin: 0 auto; text-align: center" />
+          <!-- 用户名 -->
           <a-input
-            v-model="phone.value"
+            v-model="username.value"
             allow-clear
-            placeholder="请输入您的手机号"
+            placeholder="请输入您的用户名"
             size="large"
-            @input="phone.valid = /^1[3-9]\d{9}$/.test(phone.value)"
+            @input="username.valid = username.value.length > 0"
           >
-            <template #prepend>+86</template>
+          <template #prefix>
+            <icon-user />
+            </template>
           </a-input>
-          <!-- 验证码 -->
-          <a-row :gutter="16">
-            <a-col :flex="2">
-              <a-input
-                v-model="code.value"
-                placeholder="请输入您的验证码"
-                size="large"
-                @input="code.valid = /^\d{6}$/.test(code.value)"
-              >
-                <template #prefix>
-                  <icon-email />
-                </template>
-              </a-input>
-            </a-col>
-            <a-col :flex="1">
-              <a-button
-                :disabled="code.cooling || !phone.valid"
-                long
-                size="large"
-                type="outline"
-                @click="onSendCode"
-              >
-                {{ code.cooling ? `重新发送 (${code.coolingTime})` : '获取验证码' }}
-              </a-button>
-            </a-col>
-          </a-row>
+          <!-- 密码 -->
+          <a-input
+            v-model="password.value"
+            placeholder="请输入您的密码"
+            size="large"
+            @input="password.valid = password.value.length > 0"
+          >
+            <template #prefix>
+              <icon-lock />
+            </template>
+          </a-input>
           <!-- 登录按钮 -->
           <a-button
-            :disabled="!phone.valid || !code.valid"
+            :disabled="!username.valid || !password.valid"
             :loading="loginLoading"
             long
             size="large"
