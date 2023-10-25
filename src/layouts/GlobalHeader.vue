@@ -45,7 +45,7 @@ const onLogout = () => {
         <a-menu :selected-keys="selectedKey" mode="horizontal" @menuItemClick="onMenuItemClick">
           <!-- Logo -->
           <a-menu-item key="/">
-            <a-image :preview="false" height="60px" src="/favicon.ico" />
+            <a-image :preview="false" height="40px" src="/favicon.ico" />
           </a-menu-item>
           <!-- 菜单项 -->
           <a-menu-item v-for="route in showRoutes" :key="route.path">
@@ -55,7 +55,7 @@ const onLogout = () => {
       </a-col>
 
       <!-- 右侧信息 -->
-      <a-col flex="64px">
+      <a-col flex="40px">
         <!-- 用户头像 (已登录) -->
         <a-popover v-if="user.id" :title="user.username" position="br" trigger="click">
           <!-- 信息展示 -->
