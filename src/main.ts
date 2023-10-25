@@ -18,6 +18,9 @@ import 'mavon-editor/dist/css/index.css'
 // Pinia
 import { createPinia } from 'pinia'
 
+// Baidu Map
+import BaiduMap from 'vue-baidu-map-3x';
+
 const app = createApp(App)
 
 app.use(createPinia())
@@ -25,5 +28,8 @@ app.use(router)
 app.use(ArcoVue)
 app.use(ArcoVueIcon)
 app.use(mavonEditor)
+app.use(BaiduMap, {
+    ak: 'c2ZpqW8QzoMG0zHtijgvF3TyACfBT6eG',
+  });
 
 app.mount('#app')

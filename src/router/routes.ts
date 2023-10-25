@@ -21,6 +21,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/HomeView.vue')
       },
       {
+        path: '/taxi',
+        meta: { title: '打车' },
+        component: () => import('@/views/TaxiView.vue')
+      },
+      {
         path: '/about',
         meta: { title: '关于' },
         component: () => import('@/views/AboutView.vue')
