@@ -14,5 +14,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    host: '0.0.0.0', // 允许从任何 IP 地址访问
+    port: 5173, // 设置您希望的端口号
   }
 })
