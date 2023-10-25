@@ -47,9 +47,6 @@ const onLogin = () => {
     <a-row align="center" justify="center" style="height: 95vh">
       <a-card class="card">
         <!-- Logo -->
-        <a-row justify="center">
-          <img alt="" src="/logo.svg" style="width: 50%" />
-        </a-row>
         <a-space direction="vertical" fill size="medium" style="display: flex; justify-content: center; align-items: center;">
           <img src="/logo.png" style="width: 200px; margin: 0 auto; text-align: center" />
           <!-- 用户名 -->
