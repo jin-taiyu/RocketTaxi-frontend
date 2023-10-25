@@ -13,12 +13,11 @@
   
   <script setup>
   const ready = ({BMap,map})=>{
-    //  对地图进行自定义操作
+    
   };
   </script>
   
   <style>
-  /* 地图容器必须设置宽和高属性 */
   .map {
     width: 100%;
     height: 600px;
