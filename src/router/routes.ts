@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: '/ticket',
         meta: { title: '订票' },
-        component: () => import('@/views/NotFoundView.vue')
+        component: () => import('@/views/TicketView.vue')
       },
       {
         path: '/about',

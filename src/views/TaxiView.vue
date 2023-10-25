@@ -18,4 +18,4 @@ import ProcessCard from '@/components/taxi/ProcessCard.vue'
             <SearchCard/>
         </div>
     </div>
-  </template>
+</template>
