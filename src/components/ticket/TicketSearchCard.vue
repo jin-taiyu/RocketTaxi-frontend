@@ -2,37 +2,37 @@
 const options = [
   {
     value: 'beijing',
-    label: 'Beijing',
+    label: '北京',
     children: [
       {
         value: 'chaoyang',
-        label: 'ChaoYang',
+        label: '朝阳',
         children: [
           {
             value: 'datunli',
-            label: 'Datunli',
+            label: '大屯里',
           },
         ],
       },
       {
         value: 'haidian',
-        label: 'Haidian',
+        label: '海淀',
       },
       {
         value: 'dongcheng',
-        label: 'Dongcheng',
+        label: '东城',
       },
       {
         value: 'xicheng',
-        label: 'Xicheng',
+        label: '西城',
         children: [
           {
             value: 'jinrongjie',
-            label: 'Jinrongjie',
+            label: '金融街',
           },
           {
             value: 'tianqiao',
-            label: 'Tianqiao',
+            label: '天桥',
           },
         ],
       },
@@ -40,11 +40,11 @@ const options = [
   },
   {
     value: 'shanghai',
-    label: 'Shanghai',
+    label: '上海',
     children: [
       {
         value: 'huangpu',
-        label: 'Huangpu',
+        label: '黄浦',
       },
     ],
   },
@@ -55,10 +55,16 @@ const options = [
     <div class="ticket-search-card">
         <div :style="{ display: 'flex' }">
             <a-card :style="{ width: '100%' }" >
-                <a-cascader :options="options" :style="{width:'30%'}" placeholder="请选择起点" />
-                <a-cascader :options="options" :style="{width:'30%'}" placeholder="请选择终点" />
-                <a-date-picker style="width: 40%;" />
+                <a-cascader class="search-box" :options="options" :style="{width:'30%'}" placeholder="请选择起点" />
+                <a-cascader class="search-box" :options="options" :style="{width:'30%'}" placeholder="请选择终点" />
+                <a-date-picker class="search-box" style="width: 40%;" />
             </a-card>
         </div>
     </div>
 </template>
+
+<style>
+.search-box {
+    border: 1px solid gray;
+}
+</style>
