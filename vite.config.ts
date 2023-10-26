@@ -17,6 +17,6 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // 允许从任何 IP 地址访问
-    port: 5173, // 设置您希望的端口号
+    port: 8080, // 设置您希望的端口号
   }
 })
