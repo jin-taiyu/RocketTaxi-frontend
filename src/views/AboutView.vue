@@ -10,7 +10,7 @@
         <template #description>
           <div style="text-align: center">
             <a href="https://github.com/jin-taiyu/RocketTaxi.git">Rocket Taxi</a>
-            <div>团队功能开发贡献者 / 蒲双畅 <icon-github /> / 金太宇 <icon-github /> </div>
+            <div>团队功能开发贡献者 / 金太宇 <icon-github /> / 蒲双畅 <icon-github /> </div>
           </div>
         </template>
       </a-card-meta>
